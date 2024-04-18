@@ -1,6 +1,6 @@
-# IOE 511 Project 
+# [IOE 511 Project] 10 optimization algorithms with 12 applications
 
-This is the course project by team "Albertimizer" for UMich IOE 511. To do optimization. First, try gradient descent.
+This is the course project by team "Gradient Pioneers" for UMich IOE 511.
 
 ## Usage
 ### use script to collect results
@@ -32,32 +32,32 @@ algorithms = {
 ### Algorithms
 | Code|Debug |  Algorithm | person in charge |
 |:---:|:----:|:-----|:---|
-| [x] | [x] | 1. GradientDescent, with backtracking line search | N/A
-| [x] | [ ] | 2. GradientDescentW, with Wolfe line search| Multy
-| [x] | [x] | 3. Newton, (modified Newton) with backtracking line search | N/A
-| [x] | [ ] | 4. NewtonW, (modified Newton) with Wolfe line search | Multy
-| [ ] | [ ] | 5. TRNewtonCG, trust region Newton with CG subproblem solver | Joey
-| [ ] | [ ] | 6. TRSR1CG, SR1 quasi-Newton with CG subproblem solver | Joey
-| [x] | [x] | 7. BFGS, BFGS quasi-Newton with backtracking line search | N/A
-| [x] | [ ] | 8. BFGSW, BFGS quasi-Newton with Wolfe line search | multy, tinayi
-| [ ] | [ ] | 9. DFP, DFP quasi-Newton with backtracking line search | tianyi
-| [ ] | [ ] | 10. DFPW, DFP quasi-Newton with Wolfe line search | tianyi
+| [x] | [x] | 1. GradientDescent, with backtracking line search
+| [x] | [ ] | 2. GradientDescentW, with Wolfe line search
+| [x] | [x] | 3. Newton, (modified Newton) with backtracking line search
+| [x] | [ ] | 4. NewtonW, (modified Newton) with Wolfe line search
+| [ ] | [ ] | 5. TRNewtonCG, trust region Newton with CG subproblem solver
+| [ ] | [ ] | 6. TRSR1CG, SR1 quasi-Newton with CG subproblem solver
+| [x] | [x] | 7. BFGS, BFGS quasi-Newton with backtracking line search
+| [x] | [ ] | 8. BFGSW, BFGS quasi-Newton with Wolfe line search
+| [ ] | [ ] | 9. DFP, DFP quasi-Newton with backtracking line search
+| [ ] | [ ] | 10. DFPW, DFP quasi-Newton with Wolfe line search
 
 ### problems
 | Code|Debug | problems| person in charge |
 |:---:|:----:|:-----|:---:|
-| [x] | [ ] | P1 quad 10 10 | tianyi xu
-| [x] | [ ] | P2 quad 10 1000| tianyi xu
-| [x] | [ ] | P3 quad 1000 10 | tianyi xu
-| [x] | [ ] | P4 quad 1000 1000 | tianyi xu
-| [x] | [ ] | P5 quartic 1 | zhengjia zhuo
-| [x] | [ ] | P6 quartic 2 | zhengjia zhuo
-| [x] | [x] | Rosenbrock 2 | ruihan xu
-| [x] | [x] | Rosenbrock 100 | ruihan xu
-| [x] | [x] | DataFit 2 | 
-| [x] | [x] | Exponential 10 | ruihan xu
-| [x] | [x] | Exponential 1000 | ruihan xu
-| [x] | [x] | Genhumps 5 |
+| [x] | [ ] | P1 quad 10 10
+| [x] | [ ] | P2 quad 10 1000
+| [x] | [ ] | P3 quad 1000 10
+| [x] | [ ] | P4 quad 1000 1000
+| [x] | [ ] | P5 quartic 1
+| [x] | [ ] | P6 quartic 2 
+| [x] | [x] | Rosenbrock 2 
+| [x] | [x] | Rosenbrock 100
+| [x] | [x] | DataFit 2
+| [x] | [x] | Exponential 10
+| [x] | [x] | Exponential 1000
+| [x] | [x] | Genhumps 5
 
 
 ## git tutorial
