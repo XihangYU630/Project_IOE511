@@ -1,6 +1,6 @@
 # [IOE 511 Project] 10 optimization algorithms with 12 applications
 
-This is the course project by team "Gradient Pioneers" for UMich IOE 511.
+This is the course project by team "Gradient Pioneers" (Xihang Yu, Congyue Yang, Jiawen Li) for UMich IOE 511.
 
 ## Usage
 ### use script to collect results
