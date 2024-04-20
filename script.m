@@ -89,10 +89,10 @@ ylabel('Function Value');
 %%%%%%%%%%%%%%%%%
 %%% DataFit 2 %%%
 %%%%%%%%%%%%%%%%%
-problem.name = 'DataFit_2';
-problem.x0 = [1;1];
-problem.n = length(problem.x0);
-problem.x_star = [3;0.5];
+% problem.name = 'DataFit_2';
+% problem.x0 = [1;1];
+% problem.n = length(problem.x0);
+% problem.x_star = [3;0.5];
 
 
 % problem 10
@@ -110,7 +110,7 @@ problem.x_star = [3;0.5];
 %%%%%%%%%%%%%%%%%%%%%%%%
 %%% Exponential 1000 %%%
 %%%%%%%%%%%%%%%%%%%%%%%%
-% problem.name = 'Exponential10';
+% problem.name = 'Exponential1000';
 % problem.n = 1000;
 % problem.x0 = zeros(problem.n,1);
 % problem.x0(1) = 1;
@@ -121,8 +121,9 @@ problem.x_star = [3;0.5];
 %%%%%%%%%%%%%%%%%%
 %%% Genhumps 5 %%%
 %%%%%%%%%%%%%%%%%%
-% problem.name = 'Genhumps5';
-% problem.x0 = [-506.2; 506.2; 506.2; 506.2; 506.2];
+problem.name = 'Genhumps5';
+problem.n = 5;
+problem.x0 = [-506.2; 506.2; 506.2; 506.2; 506.2];
 % problem.x_star = 
 
 
@@ -226,20 +227,20 @@ options.max_iterations = 1e3;
 %%% TRSR1CG %%%
 %%%%%%%%%%%%%%%%%%
 
-method.name = 'TrustRegion';
-method.options.step_type = 'SR1';
-method.options.delta0 = 2;
-method.options.c1 = 1e-3;
-method.options.c2 = 0.5;
-method.options.c3 = 1;
-method.options.tolCG = 1e-10;
-
-% set options
-options.term_tol = 1e-6;
-options.max_iterations = 1e3;
-
-% run method and return x^* and f^*
-[x,f] = optSolver(problem,method,options);
+% method.name = 'TrustRegion';
+% method.options.step_type = 'SR1';
+% method.options.delta0 = 2;
+% method.options.c1 = 1e-3;
+% method.options.c2 = 0.5;
+% method.options.c3 = 1;
+% method.options.tolCG = 1e-10;
+% 
+% % set options
+% options.term_tol = 1e-6;
+% options.max_iterations = 1e3;
+% 
+% % run method and return x^* and f^*
+% [x,f] = optSolver(problem,method,options);
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
