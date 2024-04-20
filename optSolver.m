@@ -21,17 +21,32 @@ init_norm_g = norm_g;
 
 f_record = f;
 
+% f_opt = problem.compute_f(problem.x_star);
+
 % set initial iteration counter
 k = 0;
+invHess = eye(size(H, 1));
 
-while norm_g > options.term_tol*max(init_norm_g, 1) && k <options.max_iterations
+switch method.name
+    case 'TrustRegion'
+        delta = method.options.delta0;
+        Bk = eye(size(H, 1));
+end
+
+while norm_g > options.term_tol*max(init_norm_g, 1) && k < options.max_iterations
     
     % take step according to a chosen method
     switch method.name
         case 'GradientDescent'
             [x_new,f_new,g_new,d,alpha] = GDStep(x,f,g,problem,method,options);
         case 'Newton'
-            
+            [x_new,f_new,g_new,d,alpha] = NewtonStep(x,f,g,problem,method,options);
+        case 'BFGS'
+            [x_new,f_new,g_new,d,alpha,invHess] = BFGS_Step(x,f,g,problem,method,options,invHess);
+        case 'TrustRegion'
+            [x_new,f_new,g_new,d,delta, Bk] = TR_Step(x,f,g,problem,method,options,delta,Bk);
+        case 'DFP'
+            [x_new,f_new,g_new,d,alpha,invHess] = DFP_Step(x,f,g,problem,method,options,invHess);
         otherwise
             
             error('Method not implemented yet!')
@@ -50,16 +65,10 @@ while norm_g > options.term_tol*max(init_norm_g, 1) && k <options.max_iterations
     
 end
 
-figure;
-xlabel('Iteration k');
-ylabel('Function value');
-
 hold on;
-f_diff = f_record;
-log_f_diff = log10(f_diff);
-plot(0:k, log_f_diff, '-o');
+% log_f_diff = log10(f_diff);
+plot(0:k, f_record, '-o');
 title('Convergence of f towards f_{opt} over iterations');
 grid on;
-ylim([log(1e-7), log(1e3)]);
 
 end

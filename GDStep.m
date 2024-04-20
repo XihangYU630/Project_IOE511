@@ -30,6 +30,33 @@ switch method.options.step_type
         x_new = x + alpha*d;
         f_new = problem.compute_f(x_new);
         g_new = problem.compute_g(x_new);
+    case 'Wolfe'
+        alpha = method.options.alpha;
+        alpha_high = method.options.alpha_high;
+        alpha_low = method.options.alpha_low;
+        c = method.options.c;
+        c1 = method.options.c1;
+        c2 = method.options.c2;
+
+        while true
+            f_test = problem.compute_f(x + alpha * d);
+            if f_test <= f + c1 * alpha * g' * d
+                g_test = problem.compute_g(x + alpha * d);
+                if g_test' * d >= c2 * g' * d
+                    break;
+                end
+            end
+            if f_test <= f + c1 * alpha * g' * d
+                alpha_low = alpha;
+            else
+                alpha_high = alpha;
+            end
+            alpha = c * alpha_low + (1-c) * alpha_high;
+        end      
+
+        x_new = x + alpha*d;
+        f_new = problem.compute_f(x_new);
+        g_new = problem.compute_g(x_new);
 
 end
 end
