@@ -16,7 +16,7 @@ Run `script.m` with your choice of algorithms and problems.
 | [x] | [x] | 3. Newton, (modified Newton) with backtracking line search
 | [x] | [x] | 4. NewtonW, (modified Newton) with Wolfe line search
 | [x] | [x] | 5. TRNewtonCG, trust region Newton with CG subproblem solver
-| [x] | [ ] | 6. TRSR1CG, SR1 quasi-Newton with CG subproblem solver
+| [x] | [x] | 6. TRSR1CG, SR1 quasi-Newton with CG subproblem solver
 | [x] | [x] | 7. BFGS, BFGS quasi-Newton with backtracking line search
 | [x] | [x] | 8. BFGSW, BFGS quasi-Newton with Wolfe line search
 | [x] | [x] | 9. DFP, DFP quasi-Newton with backtracking line search
