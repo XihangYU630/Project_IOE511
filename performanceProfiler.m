@@ -44,16 +44,16 @@ function performanceProfiler
 
 % Files containing data
 files = {
-  'GradientDescentBacktracking.txt'
-  'GradientDescentWolfe.txt'
-  'NewtonBacktracking.txt'
-  'NewtonWolfe.txt'
-  'TrustRegionNewton.txt'
-  'TrustRegionSR1.txt'
-  'BFGSBacktracking.txt'
-  'BFGSWolfe.txt'
-  'DFPBacktracking.txt'
-  'DFPWolfe.txt'
+  'results/GradientDescentBacktracking.txt'
+  'results/GradientDescentWolfe.txt'
+  'results/NewtonBacktracking.txt'
+  'results/NewtonWolfe.txt'
+  'results/TrustRegionNewton.txt'
+  'results/TrustRegionSR1.txt'
+  'results/BFGSBacktracking.txt'
+  'results/BFGSWolfe.txt'
+  'results/DFPBacktracking.txt'
+  'results/DFPWolfe.txt'
 };
 
 % Algorithms associated with files
