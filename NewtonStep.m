@@ -14,7 +14,18 @@ function [x_new,f_new,g_new,d,alpha] = NewtonStep(x,f,g,problem,method,options)
     % compute the direction
     Hess = problem.compute_H(x);
     g = problem.compute_g(x);
-    d = -Hess\g;
+
+    %%% cholesky algorithm %%%
+    eta = CholeskyAlgorithm(Hess, method.options.beta);
+    d = -(Hess+eta*eye(size(Hess,1)))\g;
+
+    if eta ~= 0
+        disp('Hess modified');
+    else
+        disp('Hess not modified')
+    end
+
+
     % determine step size
     switch method.options.step_type
         case 'Backtracking'
@@ -59,6 +70,28 @@ function [x_new,f_new,g_new,d,alpha] = NewtonStep(x,f,g,problem,method,options)
             f_new = problem.compute_f(x_new);
             g_new = problem.compute_g(x_new);
 
+    end
+
+end
+
+
+function [eta] = CholeskyAlgorithm(A, beta)
+    
+    % init eta
+    if min(diag(A)) > 0
+        eta = 0;
+    else
+        eta = -min(diag(A)) + beta;
+    end
+    n = size(A, 1);
+    while true
+        % try cholesky decomposition
+        try
+            L = chol(A + eta*eye(n));
+            return;
+        catch
+            eta = max(2*eta, beta);
+        end
     end
 
 end

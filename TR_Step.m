@@ -18,7 +18,7 @@ function [x_new,f_new,g_new,d,delta,Bk] = TR_Step(x,f,g,problem,method,options,d
     xk = x;
 
     % CG Steihaug
-    dk = conjugate_gradient_method(Bk, tolCG, xk, delta, problem);
+    dk = conjugate_gradient_method(Bk, tolCG, xk, delta, problem, method);
 
     % Evaluate pho_k
     pho_k = (problem.compute_f(xk) - problem.compute_f(xk+dk))/(mx(zeros(problem.n, 1), xk, Bk, problem) - mx(dk, xk, Bk, problem));
@@ -45,7 +45,7 @@ function [x_new,f_new,g_new,d,delta,Bk] = TR_Step(x,f,g,problem,method,options,d
     % compute hessian
     switch method.options.step_type
         case 'SR1'
-            if norm((y - Bk * s)' * s) >= method.options.c3 * norm(y - Bk * s) * norm(s)
+            if norm((y - Bk * s)' * s) > method.options.c3 * norm(y - Bk * s) * norm(s)
                 Bk = Bk + ((y - Bk * s) * (y - Bk * s)') / ((y - Bk * s)' * s);
             end
         case 'Newton'
@@ -55,7 +55,7 @@ function [x_new,f_new,g_new,d,delta,Bk] = TR_Step(x,f,g,problem,method,options,d
 end
 
 
-function dk = conjugate_gradient_method(Bk, tolCG, xk, radius, problem)
+function dk = conjugate_gradient_method(Bk, tolCG, xk, radius, problem, method)
     % Conjugate Gradient method for solving Bx = r.
     %
     % Parameters:
@@ -79,8 +79,10 @@ function dk = conjugate_gradient_method(Bk, tolCG, xk, radius, problem)
     zj = z0;
     rj = r0;
     pj = p0;
+
+    iter = 0;
     
-    while true
+    while iter < method.options.max_iterations_CG
         if pj' * Bk * pj <= 0
             a = pj' * pj;
             b = 2 * (pj' * zj);
@@ -134,7 +136,12 @@ function dk = conjugate_gradient_method(Bk, tolCG, xk, radius, problem)
         rj = rj1;
         pj = pj1;
         zj = zj1;
+
+        % iter update
+        iter = iter + 1;
     end
+
+    dk = z0;
 end
 
 function val = mx(d, x, B, problem)

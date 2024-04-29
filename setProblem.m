@@ -75,34 +75,34 @@ switch problem.name
         problem.compute_H = @quartic_2_Hess;
 
 
-    case 'Rosenbrock2'
+    case 'P7_Rosenbrock2'
         
         problem.compute_f = @rosen_func;
         problem.compute_g = @rosen_grad;
         problem.compute_H = @rosen_Hess;
 
-    case 'Rosenbrock100'
+    case 'P8_Rosenbrock100'
         
         problem.compute_f = @rosen100_func;
         problem.compute_g = @rosen100_grad;
         problem.compute_H = @rosen100_Hess;
     
-    case 'DataFit_2'
+    case 'P9_DataFit_2'
         problem.compute_f = @func2_func;
         problem.compute_g = @func2_grad;
         problem.compute_H = @func2_Hess;
 
-    case 'Exponential10'
+    case 'P10_Exponential10'
         problem.compute_f = @func3_func;
         problem.compute_g = @func3_grad;
         problem.compute_H = @func3_Hess;
 
-    case 'Exponential1000'
+    case 'P11_Exponential1000'
         problem.compute_f = @func3_func;
         problem.compute_g = @func3_grad;
         problem.compute_H = @func3_Hess;
 
-    case 'Genhumps5'
+    case 'P12_Genhumps5'
         
         problem.compute_f = @genhumps_5_func;
         problem.compute_g = @genhumps_5_grad;

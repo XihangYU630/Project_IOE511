@@ -11,15 +11,22 @@
 % function that computes the function value of the quad_10_10 function
 function [f] = quad_1000_1000_func(x)
 
-% Set random number generator seeds
-rng(0);
+% Declare variables as persistent so they retain their values between calls
+persistent q Q
 
-% Generate random data
-q = randn(1000,1);
-% MATLAB sprandsym function. Inputs: n, density, reciprocal of the 
-% condition number, and kind 
-% (see https://www.mathworks.com/help/matlab/ref/sprandsym.html)
-Q = sprandsym(1000,0.5,1e-3,1);
+% Check if persistent variables are empty (first run)
+if isempty(q) || isempty(Q)
+    % Set random number generator seeds for reproducibility
+    rng(0);
+
+    % Generate random data
+    q = randn(1000, 1);
+
+    % Generate a sparse symmetric positive definite matrix
+    % MATLAB sprandsym function. Inputs: n, density, reciprocal of the 
+    % condition number, and kind 
+    Q = sprandsym(1000, 0.5, 1e-3, 1);
+end
 
 % compute function value
 f = 1/2*x'*Q*x + q'*x;
