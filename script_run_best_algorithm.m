@@ -40,4 +40,4 @@ options.term_tol = 1e-6;
 options.max_iterations = 1e3;
 
 % run method and return x^* and f^*
-[x,f] = optSolver(problem,method,options);
+[x,f] = optSolver_Gradient_Pioneers(problem,method,options);

@@ -191,7 +191,7 @@ problem.x0 = 20*rand(10,1)-10;
 problem.n = length(problem.x0);
 
 % run method and return x^* and f^*
-[x,f] = optSolver(problem,method,options);
+[x,f] = optSolver_Gradient_Pioneers(problem,method,options);
 
 % problem 2
 %%%%%%%%%%%%%%%%%%%%
@@ -203,7 +203,7 @@ problem.x0 = 20*rand(10,1)-10;
 problem.n = length(problem.x0);
 
 % run method and return x^* and f^*
-[x,f] = optSolver(problem,method,options);
+[x,f] = optSolver_Gradient_Pioneers(problem,method,options);
 
 % problem 3
 %%%%%%%%%%%%%%%%%%%%
@@ -215,7 +215,7 @@ problem.x0 = 20*rand(1000,1)-10;
 problem.n = length(problem.x0);
 
 % run method and return x^* and f^*
-[x,f] = optSolver(problem,method,options);
+[x,f] = optSolver_Gradient_Pioneers(problem,method,options);
 
 % problem 4
 %%%%%%%%%%%%%%%%%%%%%%
@@ -227,7 +227,7 @@ problem.x0 = 20*rand(1000,1)-10;
 problem.n = length(problem.x0);
 
 % run method and return x^* and f^*
-[x,f] = optSolver(problem,method,options);
+[x,f] = optSolver_Gradient_Pioneers(problem,method,options);
 
 % problem 5
 %%%%%%%%%%%%%%%%%
@@ -238,7 +238,7 @@ problem.x0 = [cos(70*pi/180); sin(70*pi/180); cos(70*pi/180); sin(70*pi/180)];
 problem.n = length(problem.x0);
 
 % run method and return x^* and f^*
-[x,f] = optSolver(problem,method,options);
+[x,f] = optSolver_Gradient_Pioneers(problem,method,options);
 
 % problem 6
 %%%%%%%%%%%%%%%%%
@@ -249,7 +249,7 @@ problem.x0 = [cos(70*pi/180); sin(70*pi/180); cos(70*pi/180); sin(70*pi/180)];
 problem.n = length(problem.x0);
 
 % run method and return x^* and f^*
-[x,f] = optSolver(problem,method,options);
+[x,f] = optSolver_Gradient_Pioneers(problem,method,options);
 
 % problem 7
 %%%%%%%%%%%%%%%%%%%%
@@ -261,7 +261,7 @@ problem.n = length(problem.x0);
 problem.x_star = [1;1];
 
 % run method and return x^* and f^*
-[x,f] = optSolver(problem,method,options);
+[x,f] = optSolver_Gradient_Pioneers(problem,method,options);
 
 % problem 8
 %%%%%%%%%%%%%%%%%%%%%%
@@ -274,7 +274,7 @@ problem.x0(1) = -1.2;
 problem.x_star = ones(problem.n,1);
 
 % run method and return x^* and f^*
-[x,f] = optSolver(problem,method,options);
+[x,f] = optSolver_Gradient_Pioneers(problem,method,options);
 
 % problem 9
 %%%%%%%%%%%%%%%%%
@@ -286,7 +286,7 @@ problem.n = length(problem.x0);
 problem.x_star = [3;0.5];
 
 % run method and return x^* and f^*
-[x,f] = optSolver(problem,method,options);
+[x,f] = optSolver_Gradient_Pioneers(problem,method,options);
 
 
 % problem 10
@@ -301,7 +301,7 @@ problem.x_star = ones(problem.n, 1);
 problem.x_star(1) = log((1+2*sqrt(5))/19);
 
 % run method and return x^* and f^*
-[x,f] = optSolver(problem,method,options);
+[x,f] = optSolver_Gradient_Pioneers(problem,method,options);
 
 % problem 11
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -315,7 +315,7 @@ problem.x_star = ones(problem.n, 1);
 problem.x_star(1) = log((1+2*sqrt(5))/19);
 
 % run method and return x^* and f^*
-[x,f] = optSolver(problem,method,options);
+[x,f] = optSolver_Gradient_Pioneers(problem,method,options);
 
 % problem 12
 %%%%%%%%%%%%%%%%%%
@@ -326,7 +326,7 @@ problem.n = 5;
 problem.x0 = [-506.2; 506.2; 506.2; 506.2; 506.2];
 
 % run method and return x^* and f^*
-[x,f] = optSolver(problem,method,options);
+[x,f] = optSolver_Gradient_Pioneers(problem,method,options);
 
 
 
