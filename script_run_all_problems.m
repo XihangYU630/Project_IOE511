@@ -9,9 +9,11 @@ close all
 clear all
 clc
 
-figure;
-xlabel('Iteration k');
-ylabel('Function Value');
+% figure;
+% xlabel('Iteration k');
+% ylabel('Function Value');
+
+% To collect data for each single methods, uncommen one specific problem.
 
 
 % set method
@@ -329,4 +331,4 @@ problem.x0 = [-506.2; 506.2; 506.2; 506.2; 506.2];
 
 
 %% plot legend
-legend('Gradient Descent (Backtracking)','Gradient Descent (Wolfe)','Newton (Backtracking)','Newton (Wolfe)','TRNewtonCG','TRSR1CG','BFGS (Backtracking)','BFGS (Wolfe)','DFP (Backtracking)','DFP (Wolfe)');
+% legend('Gradient Descent (Backtracking)','Gradient Descent (Wolfe)','Newton (Backtracking)','Newton (Wolfe)','TRNewtonCG','TRSR1CG','BFGS (Backtracking)','BFGS (Wolfe)','DFP (Backtracking)','DFP (Wolfe)');

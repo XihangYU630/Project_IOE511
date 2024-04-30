@@ -69,11 +69,11 @@ end
 
 elapsedTime = toc;
 
-hold on;
-% log_f_diff = log10(f_diff);
-plot(0:k, f_record, '-o');
-title('Convergence of f towards f_{opt} over iterations');
-grid on;
+% hold on;
+% % log_f_diff = log10(f_diff);
+% plot(0:k, f_record, '-o');
+% title('Convergence of f towards f_{opt} over iterations');
+% grid on;
 
 
 % fileName = strcat(problem.name, '.txt');

@@ -74,7 +74,7 @@ algorithms = {
 file_format = '%s %d %f %f %f';
 
 % Column to consider
-column = 2;
+column = 3;
 
 % Log scale?
 options.log_scale = false;
